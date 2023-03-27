@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { mockUsers } from '@/assets/mockData'
 import {
   LS_FAKE_TWITTER_USERS,
@@ -12,9 +12,10 @@ interface UserStateType {
   currentUser: string
   users: UserType[]
 }
+const ls_users = localStorage.getItem(LS_FAKE_TWITTER_USERS)
 const initialState: UserStateType = {
   currentUser: localStorage.getItem(LS_FAKE_TWITTER_CURRENT_USER) || '',
-  users: mockUsers,
+  users: ls_users ? JSON.parse(ls_users) : mockUsers,
 }
 
 const userSlice = createSlice({

@@ -1,7 +1,8 @@
 import { useState, useEffect, ChangeEvent, FormEvent } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate, useLocation } from 'react-router-dom'
-import Store, { RootState } from '@/store'
+import { RootState } from '@/store'
+import BtnBack from '@/components/btnBack'
 import styles from './index.module.less'
 const Login = () => {
   const { currentUser } = useSelector((state: RootState) => state.user)
@@ -51,6 +52,7 @@ const Login = () => {
         />
       </label>
       <button type='submit'>{isLogin ? 'Login' : 'Signup'}</button>
+      <BtnBack />
     </form>
   )
 }

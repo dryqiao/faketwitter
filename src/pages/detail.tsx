@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { RootState } from '@/store'
 import Tweet from '@/components/tweet'
 import styles from './index.module.less'
-import tweet from '@/store/tweet'
 
 const Detail = () => {
   const { currentUser, tweets } = useSelector(({ user, tweet }: RootState) => ({

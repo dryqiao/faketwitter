@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '@/store'
 import styles from '@/pages/index.module.less'
-import { useState } from 'react'
+import BtnBack from './btnBack'
 
 const Footer = () => {
   const dispatch = useDispatch()
@@ -51,13 +51,7 @@ const Footer = () => {
           <button onClick={handlerCancel}>cancel</button>
         </div>
       )}
-      <button
-        onClick={() => {
-          navigate('/')
-        }}
-      >
-        Back To Home
-      </button>
+      <BtnBack />
       {currentUser && (
         <button
           onClick={() => {

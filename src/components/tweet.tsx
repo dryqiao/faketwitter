@@ -1,6 +1,4 @@
 import { TweetType } from '@/store/tweet'
-import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 import styles from '@/pages/index.module.less'
 
 const Tweet = ({ tweet }: { tweet: TweetType }) => {
